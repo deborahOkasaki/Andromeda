@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- CSS RESIDÊNCIA, LOGIN-->
+    <link rel="stylesheet" href="css/andromeda.css">
+    <link rel="stylesheet" href="css/residencia.css">
+	<link rel="icon" href="img/houses.png">
+	<!-- BOOTSTRAP, Jquery-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<!-- JavaScript da página RESIDÊNCIA,LOGIN-->
+	<script type="text/javascript" src="js/validacao.js"></script>
+	<!-- JavaScript para Máscara em Residencia-->
+	<script src="js/jquery.maskedinput-master/lib/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.maskedinput-master/src/jquery.maskedinput.js" type="text/javascript"></script>
+
+// 
+    <title>Minhas Residências</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <img src="img/Menu Hamburger.png" class="iconMenu" alt="">
+        <div class="col-xs-12">
+            <div id="infoCli">
+                <h2 id="nomeCli">Bruna</h2>
+                <p id="infoRes">Principal - 2500xp, R$28,50 economizados!</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img class="text-center" src="img/Botao Adicionar residencia.png" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="cont-res p-0">
+                        <div class="cab-cont">
+                            <img class="bolinha" src="img/selecionado.png" alt="">
+							<img class="fechar" src="img/dots.png" alt="">
+                            <p class="tit">#Principal</p>
+                            <p id="infoResComodos">1 cômodos, média R$70,00/mês</p>
+                        </div>
+
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+							<p class="fechar">X</p>
+                            <p id="titComodo" class="tit">Quarto de visita</p>
+                            <p id="infoComodo">1 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+
+                        <div id="divBusca" class="text-center">
+                            <input type="text" id="campo-busca" placeholder="  Digite o modelo do aparelho..." tabindex="1"/>
+                            <img src="img/busca.png" class="btnBusca" alt="Buscar"/>
+                        </div>
+
+                        <div class="cont-aparelho">
+                            <div id="fotoEletronico"></div>
+                            <p id="titEletronico" class="tit">Monitor LED 24'</p>
+                            <p id="infoComodo">Seu aparelho gasta uma média de R$70,00/mês</p>
+                            <input id="campo-data" type="text"  tabindex="2"/>
+                            <input  id="campo-horas" type="text" tabindex="3"/>
+                            <button id="addEletronico">+</button>
+                        </div>
+                        <div class="text-center">
+                            <button class="botoes" id="cancelComodo" tabindex="5">Cancelar</button>
+                            <button class="botoes" id="salvaComodo" tabindex="4">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="cont-res p-0">
+                        <div class="cab-cont">
+                            <img class="fechar" src="img/dots.png" alt="">
+                            <img class="bolinha" src="img/selecionado.png" alt="">
+                            <p class="tit">#MeuRestaurante</p>
+                            <p id="infoResComodos">3 cômodos, média R$70,00/mês</p>
+                        </div>
+
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+                            <p id="titComodo" class="tit">Cozinha</p>
+                            <p id="infoComodo">7 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+                            <p id="titComodo" class="tit">Banheiro</p>
+                            <p id="infoComodo">3 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+                            <p id="titComodo" class="tit">Salão</p>
+                            <p id="infoComodo">2 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="cont-res p-0">
+                        <div class="cab-cont">
+                            <img class="fechar" src="img/dots.png" alt="">
+                            <img class="bolinha" src="img/selecionado.png" alt="">
+                            <p class="tit">#MeuRestaurante</p>
+                            <p id="infoResComodos">3 cômodos, média R$70,00/mês</p>
+                        </div>
+
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+                            <p id="titComodo" class="tit">Cozinha</p>
+                            <p id="infoComodo">6 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+                            <p id="titComodo" class="tit">Banheiro</p>
+                            <p id="infoComodo">2 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+                        <div class="cont-comodo">
+                            <div id="fotoComodo"></div>
+                            <p id="titComodo" class="tit">Salão</p>
+                            <p id="infoComodo">2 eletrodoméstico(s), média R$70,00/mês</p>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+</body>
+</html>

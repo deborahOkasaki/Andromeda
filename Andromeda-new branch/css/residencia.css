@@ -1,0 +1,183 @@
+#nomeCli{
+    color: white;       
+}
+
+#infoRes{
+    color: #6cbfc7;
+}
+
+
+#infoCli{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.allComodos{
+    float: left;
+    display: inline;
+    position: relative;
+    margin: 0px;
+}
+
+.cont-res{
+    margin-top: 10px;
+    border-radius: 10px;
+    background: white;
+    min-width: 300px;
+    max-width: 400px;;
+    height: auto;
+    margin-bottom: 10px;
+    
+}
+
+.cab-cont{
+    border-radius: 10px 10px 0px 0px ;
+    width: 100%;
+    height: 80px;
+    background-color: #6363f3;
+}
+
+.tit{
+    padding-top: 20px;
+    color: white;
+    font-size: 22px;
+    margin:0px ;
+}
+
+#infoResComodos{
+    color: #ebe79c;
+    font-size: 12px;
+}
+
+.cont-comodo{
+    background-color: #71cacc;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid white;
+}
+
+#infoComodo{
+    font-size: 12px;
+    color: #ecee9b;
+}
+
+#fotoComodo{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: white;
+    float: left;
+    margin: 10px;
+}
+
+#titComodo{
+    padding-top: 20px;
+    margin: 0px;
+}
+
+#campo-busca{
+    width: 70%;
+    height: 40px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.cont-aparelho{
+    border-radius: 10px;
+    width: 90%;
+    height: 100px;
+    background-color: #71cacc;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+#fotoEletronico{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: white;
+    float: left;
+    margin: 10px;
+}
+
+#titEletronico{
+    padding-top: 10px;
+    margin: 0px;
+}
+
+#campo-data{
+    width: 80px;
+    height: 20px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+#campo-horas{
+    width: 60px;
+    height: 20px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+#addEletronico{
+    width: 20px;
+    height: 20px;
+    background-color: #6363f3;
+    border-radius: 4px;
+    color: white;
+}
+
+.botoes{
+    margin-top: 10px;
+    width: 120px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#cancelComodo{
+    background-color: #6363f3;
+}
+
+#salvaComodo{
+    background-color: #4e33b8;
+}
+
+.bolinha{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-top: 15px;
+}
+
+.fechar{
+    color: white;
+    float: right;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.btnBusca{
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (min-width: 550px) {
+  /* .cont-res{
+       width: 100%;
+   }*/
+}
+
+@media screen and (min-width: 800px) {
+   /* .cont-res{
+        width: 40%;
+    }*/
+ }
+
+@media screen and (min-width: 1200px) {
+   /* .cont-res{
+        width: 30%;
+    }*/
+}
