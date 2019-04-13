@@ -1,4 +1,4 @@
-package br.com.fiap.andromeda.servlets;
+package br.com.fiap.andromeda.servlet;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;

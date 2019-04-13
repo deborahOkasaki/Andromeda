@@ -13,23 +13,20 @@ public class UserService {
 	@PersistenceContext
 	private EntityManager em;
 	
-//	public boolean autenticar(String email, String senha) {
-//		List<Usuario> resultado = (List<Usuario>) this.em
-//							.createQuery(
-//								"SELECT u FROM t_usuario u WHERE u.ds_email = :email AND u.tx_senha = :senha"
-//							) 
-//							.setParameter("email", email)
-//							.setParameter("senha", senha)
-//							.getResultList();
-//		if(resultado.size() > 0) {
-//			return resultado;
-//		} 
-//		return null;
-//	}
-	public boolean autenticate(String username, String password) {
-		if(username.equals("test@email.com") && password.equals("teste123")) {
-			return true;
-		}
-		return false;
+	public Usuario autenticate(String email, String senha) {
+		return (Usuario) this.em.createQuery(
+							"select u from Usuario u where u.dsEmail = :email and u.dsSenha = :senha"
+						 ).setParameter("email", email).setParameter("senha", senha).getSingleResult();
+		
+//		j.fernandes@gmail.com
+//		123456
+		
 	}
+	
+//	public boolean autenticate(String username, String password) {
+//		if(username.equals("test@email.com") && password.equals("teste123")) {
+//			return true;
+//		}
+//		return false;
+//	}
 }

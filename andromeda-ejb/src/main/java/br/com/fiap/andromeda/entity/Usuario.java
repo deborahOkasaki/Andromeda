@@ -22,11 +22,9 @@ public class Usuario {
 	private String nmUsuario; 
 	
 	@Column(name="nr_cpf",nullable=false)
-	//trocar para string
 	private int nrCpf;
 	
 	@Column(name="ds_email",nullable=false,length=20)
-	//must be unique
 	private String dsEmail;
 	
 	@Column(name="tx_senha",nullable=false,length=12)
@@ -40,14 +38,6 @@ public class Usuario {
 	public Usuario(int cdUsuario, String nmUsuario, int nrCpf, String dsEmail, String dsSenha) {
 		super();
 		this.cdUsuario = cdUsuario;
-		this.nmUsuario = nmUsuario;
-		this.nrCpf = nrCpf;
-		this.dsEmail = dsEmail;
-		this.dsSenha = dsSenha;
-	}
-	
-	public Usuario(String nmUsuario, int nrCpf, String dsEmail, String dsSenha) {
-		super();
 		this.nmUsuario = nmUsuario;
 		this.nrCpf = nrCpf;
 		this.dsEmail = dsEmail;

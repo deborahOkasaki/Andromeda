@@ -1,6 +1,7 @@
-package br.com.fiap.andromeda.servlets;
+package br.com.fiap.andromeda.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,21 +24,32 @@ public class LoginServlet extends HttpServlet {
   protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 	  //req.setAttribute("username", req.getParameter("username"));
 	  
+	  //Makes the service available for use
 	  UserService userService = (UserService) req.getSession().getAttribute("userService");
+	  
+	  //Get the values from the specified parameters
 	  String username = req.getParameter("username");
 	  String password = req.getParameter("password");
 	  
-	  
-	  boolean isUserValid = userService.autenticate(username, password);
-	  if(isUserValid == true) {
+	  Usuario user = userService.autenticate(username, password);
+	  if(user != null) {
+		  req.setAttribute("user", user);
 		  res.sendRedirect("/andromeda-ejb/main");
-//		  req.setAttribute("username", username);
-//		  RequestDispatcher dispatcher = req.getRequestDispatcher("/abas/main.jsp");
-//	      dispatcher.forward(req, resp);
 	  } else {
 		  req.setAttribute("erro", "Usuário ou senha inválidos! Tente novamente.");
 		  RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 	      dispatcher.forward(req, res);
 	  }
+//	  boolean isUserValid = userService.autenticate(username, password);
+//	  if(isUserValid == true) {
+//		  res.sendRedirect("/andromeda-ejb/main");
+////		  req.setAttribute("username", username);
+////		  RequestDispatcher dispatcher = req.getRequestDispatcher("/abas/main.jsp");
+////	      dispatcher.forward(req, resp);
+//	  } else {
+//		  req.setAttribute("erro", "Usuário ou senha inválidos! Tente novamente.");
+//		  RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+//	      dispatcher.forward(req, res);
+//	  }
   }
 }
