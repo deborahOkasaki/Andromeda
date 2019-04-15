@@ -1,0 +1,6 @@
+<div class="row">
+    <div class="user-info">
+        <span class="user-name">${username}</span>
+        <span class="user-desc">Descrição</span>
+    </div>
+</div>

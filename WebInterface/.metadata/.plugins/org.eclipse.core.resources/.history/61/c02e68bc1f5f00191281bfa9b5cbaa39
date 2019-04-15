@@ -1,0 +1,3 @@
+function detectCdResidencia(cd){
+	document.getElementByName("resCode").value = cd;
+}

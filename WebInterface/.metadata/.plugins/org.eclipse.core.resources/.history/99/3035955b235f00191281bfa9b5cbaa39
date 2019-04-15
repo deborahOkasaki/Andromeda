@@ -1,0 +1,9 @@
+function toCreateCom(cd){
+	document.getElementsByName("resCode")[0].value = cd;
+	console.log(cd);
+}
+
+function toDeleteCom(cd){
+	document.getElementsByName("resCodeDelete")[0].value = cd;
+	console.log(cd);
+}

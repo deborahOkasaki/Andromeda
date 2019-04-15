@@ -1,0 +1,30 @@
+<div class="modal fade" id="editRes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modalTitle">Editar Residência</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/editRes" method="post">
+            <div class="modal-body">
+            	 
+            	 	<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="edResNm">Residência</span>
+					  </div>
+					  <input hidden name="edComCd">
+					  <input name="edResNm" type="text" class="form-control" placeholder="Nome para a identificação" aria-label="edResNm" aria-describedby="basic-addon1">
+				</div>
+            	 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancelar"
+                    data-dismiss="modal">cancelar</button>
+                <button type="submit" class="btn salvar">salvar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="modal fade" id="addCom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modalTitle">Adicionar Cômodo</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/main" method="post">
+            <div class="modal-body">
+            	 
+            	 	<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="resName">Cômodo</span>
+					  </div>
+					  <input name="comName" type="text" class="form-control" placeholder="Nome para a identificação" aria-label="comName" aria-describedby="basic-addon1">
+				</div>
+            
+				  <div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <label class="input-group-text" for="resType">Tipo</label>
+					  </div>
+					  <select class="custom-select" id="comType" name="comType">
+					    <option selected>Escolha...</option>
+					    <option value="1">Sala</option>
+					    <option value="2">Quarto</option>
+					    <option value="3">Banheiro</option>
+					    <option value="4">Cozinha</option>
+					  </select>
+					</div>
+					<input name="res" value="${com}"/>
+            	 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancelar"
+                    data-dismiss="modal">cancelar</button>
+                <button type="submit" class="btn salvar">salvar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

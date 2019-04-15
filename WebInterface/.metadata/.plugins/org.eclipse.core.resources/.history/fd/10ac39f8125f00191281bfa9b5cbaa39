@@ -1,0 +1,35 @@
+nav{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 60px;
+	height: 100vh;
+	background: #fff;
+	display: flex;
+}
+
+nav .menu, nav .logout{
+	border: 1px solid red;
+	width: 100%;
+	text-align: center;
+}
+
+nav #home{
+	width: 35px;
+}
+
+nav #news{
+	width: 32px;
+}
+
+nav #tasks{
+	width: 30px;
+}
+
+nav #dashboard{
+	width: 30px;
+}
+
+nav .logout img{
+	width: 30px;
+}

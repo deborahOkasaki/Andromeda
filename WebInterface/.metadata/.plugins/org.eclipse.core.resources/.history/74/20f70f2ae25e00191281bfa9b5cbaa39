@@ -1,0 +1,20 @@
+.modalTitle{
+	font-size: 1.2rem;
+	color: var(--gray);
+}
+
+.modal-footer .salvar, .modal-footer .cancelar {
+	padding-left: 30px
+	padding-right: 30px
+	color: #fff;
+}
+
+.modal-footer .salvar{	
+    background: var(--dpurple);
+    margin-right: 5px;    
+}
+
+.modal-footer .cancelar{
+    background: var(--lpurple);
+    margin-left: 5px;
+}

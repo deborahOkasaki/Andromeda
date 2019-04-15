@@ -1,0 +1,43 @@
+package com.andromeda.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.andromeda.entity.Usuario;
+import com.andromeda.service.ResidenciaService;
+
+@WebServlet(value = "/index")
+public class LoginServlet extends HttpServlet {
+	private ResidenciaService resService = new ResidenciaService();
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		req.getRequestDispatcher("/index.jsp").forward(req, res);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		req.setAttribute("username", req.getParameter("username"));
+		req.setAttribute("password", req.getParameter("password"));
+		
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+		
+		Usuario usuario = new Usuario(1, "Usuario Teste", "00000000000", "test@email.com", "1234");
+		if(usuario.getDsEmail().equals(username) && usuario.getDsSenha().equals(password)){
+			req.getSession().setAttribute("user", usuario);
+			req.getSession().setAttribute("res", resService.retrieveRes());
+			res.sendRedirect("/main");
+		} else {
+			req.setAttribute("error", "Usuário ou senha incorretos!");
+			req.getRequestDispatcher("/index.jsp").forward(req, res);
+		}
+	}
+}

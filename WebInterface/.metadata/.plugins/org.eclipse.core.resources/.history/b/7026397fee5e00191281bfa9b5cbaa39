@@ -1,0 +1,28 @@
+package com.andromeda.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.andromeda.entity.Comodo;
+import com.andromeda.entity.Residencia;
+
+public class ComodoService {
+	private static List<Comodo> listCom = new ArrayList<Comodo>();
+	private ResidenciaService resService = new ResidenciaService();
+	static {
+		listCom.add(new Comodo(, 1, "Sala principal", 1));
+		listCom.add(new Comodo(new Residencia(1), 2, "Meu Quarto", 2));
+	}
+	
+	public List<Residencia> retrieveRes(){
+		return listRes;
+	}
+	
+	public void addRes(Residencia res) {
+		listRes.add(res);
+	}
+	
+	public void deleteRes(Residencia res) {
+		listRes.remove(res);
+	}
+}

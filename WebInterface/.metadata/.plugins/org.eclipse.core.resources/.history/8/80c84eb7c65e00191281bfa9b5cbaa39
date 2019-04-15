@@ -1,0 +1,39 @@
+package com.andromeda.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.andromeda.entity.Usuario;
+
+@WebServlet(value = "/index")
+public class LoginServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		request.setAttribute("username", request.getParameter("username"));
+		request.setAttribute("password", arg1);
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		this.authenticate(username, password, request);
+		
+	}
+	
+	private void authenticate(String username, String password, HttpServletRequest req) {
+		
+	}
+}

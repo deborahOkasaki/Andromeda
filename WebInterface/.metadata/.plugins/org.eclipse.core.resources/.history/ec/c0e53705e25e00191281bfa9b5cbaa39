@@ -1,0 +1,16 @@
+.modalTitle{
+	font-size: 1.2rem;
+	color: var(--gray);
+}
+
+.modal-footer .salvar{
+	color: #fff;
+    background: var(--dpurple);
+    margin-right: 5px;    
+}
+
+.modal-footer .cancelar{
+	color: #fff;
+    background: var(--lpurple);
+    margin-left: 5px;
+}

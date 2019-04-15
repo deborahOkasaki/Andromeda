@@ -1,0 +1,30 @@
+package com.andromeda.servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.andromeda.entity.Residencia;
+
+@WebServlet(value = "/main")
+public class SessionServlet extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		//Get user info
+		req.getSession().getAttribute("user");
+		req.getRequestDispatcher("/abas/main.jsp").forward(req, res);
+		
+		List<Residencia> listRes = new ArrayList<Residencia>();
+		listRes.add(new Residencia(1, "Principal", 1));
+		listRes.add(new Residencia(2, "Sítio", 2));
+		//Get residencia list
+		req.getSession().setAttribute("listRes", listRes);
+		req.getSession().getAttribute("listRes");
+	}
+}

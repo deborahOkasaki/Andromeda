@@ -1,0 +1,11 @@
+<nav>
+	<div class="menu">
+		<img src="/assets/home.svg" id="home" alt="home"/>
+		<img src="/assets/news.svg" id="news" alt="news"/>
+		<img src="/assets/tasks.svg" id="tasks" alt="tasks"/>
+		<img src="/assets/dashboard.svg" id="dashboard" alt="dashboard"/>
+	</div>
+	<div class="logout">
+		<img src="/assets/logout.svg" id="logout" alt="logout"/>
+	</div>
+</nav>

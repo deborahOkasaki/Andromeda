@@ -1,0 +1,39 @@
+package br.com.fiap.andromeda.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.fiap.andromeda.ejb.UserService;
+import br.com.fiap.andromeda.entity.Usuario;
+
+@WebServlet(value = "/index")
+public class LoginServlet extends HttpServlet {
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	  //Makes the service available for use
+	  UserService userService = (UserService) req.getSession().getAttribute("userService");
+	  
+	  //Get the values from the specified parameters
+	  String username = req.getParameter("username");
+	  String password = req.getParameter("password");
+	  
+	  //Authenticate. If true -> redirect/ false -> login page
+//	  Usuario user = userService.authenticate(username, password);
+	  Usuario user = new Usuario(1, "Usuario Test", "00000000000", "test@user.com", "1234");
+	  if(user != null) {
+		  req.setAttribute("user", user);
+		  res.sendRedirect("/andromeda-ejb/main");
+	  } else {
+		  req.setAttribute("erro", "Usuário ou senha inválidos! Tente novamente.");
+		  res.sendRedirect("/andromeda-ejb/index");
+//		  req.getRequestDispatcher("/index.jsp").forward(req, res);
+	  }
+  }
+}

@@ -1,0 +1,73 @@
+package com.andromeda.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.andromeda.entity.Comodo;
+import com.andromeda.entity.Residencia;
+import com.andromeda.entity.Usuario;
+
+public class ManagementService {
+	private static List<Residencia> listRes = new ArrayList<Residencia>();
+	private static List<Comodo> listCom = new ArrayList<Comodo>();
+	private static Usuario user = new Usuario();
+	static {
+		user = new Usuario(1, "Usuario Teste", "00000000000", "test@email.com", "1234");
+		
+		Residencia res01 = new Residencia(1, "Principal", 1);
+		Residencia res02 = new Residencia(2, "Sítio", 2);
+		listRes.add(res01);
+		listRes.add(res02);
+		
+		
+		Comodo com01 = new Comodo(res01, 1, "Quarto", 2);
+		Comodo com02 = new Comodo(res01, 1, "Sala", 1);
+		Comodo com03 = new Comodo(res02, 1, "Cozinha", 3);
+		Comodo com04 = new Comodo(res02, 1, "Banheiro", 4);
+		listCom.add(com01);
+		listCom.add(com02);
+		listCom.add(com03);
+		listCom.add(com04);
+	}
+	
+	//User management
+	public Usuario authenticate(String username, String password) {
+		if(user.equals(username) && user.equals(password)) {
+			return user;
+		}
+		return null;
+	}
+	
+	public List<Residencia> retrieveRes(){
+		return listRes;
+	}
+	
+	public Residencia findRes(String name){
+		for(Residencia res : listRes) {
+			if(res.getNmResidencia().equals(name)) {
+				return res;
+			}
+		}
+		return null;
+	}
+	
+	public void addRes(Residencia res) {
+		listRes.add(res);
+	}
+	
+	public void deleteRes(Residencia res) {
+		listRes.remove(res);
+	}
+	
+	public List<Comodo> retrieveCom(){
+		return listCom;
+	}
+	
+	public void deleteCom(Comodo com) {
+		listCom.remove(com);
+	}
+	
+	public void addCom(Comodo com) {
+		listCom.add(com);
+	}
+}

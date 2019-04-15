@@ -1,0 +1,149 @@
+<%@include file="../commons/header.jspf"%>
+<body>
+    <div class="container-fluid">
+    	<div class="row wrapper">
+    	<!-- Navbar -->
+    	<%@include file="../commons/navigation.jspf" %>
+    	
+    	
+    	<div class="contentDisplay">
+    	<!-- Display de informacoes do usuario -->
+    	<%@include file="../commons/userInfo.jspf" %>
+
+        <!-- lista de residencias -->
+        <div class="row justify-content-md-center addRes">
+        	<img src="/assets/house.svg" alt="adicionar residencia" data-toggle="modal" data-target="#addRes"/>
+        </div>
+        <div class="row">
+            <!-- residencia -->
+            <c:forEach items="${listRes}" var="res" varStatus="loop">
+            	
+            	<div class="col-sm col col-md-6 col-lg-5 col-xl-4 resWhole">
+                <div class="accordion" id="res${loop.index}">
+                    <div class="res-card">
+                        <div class="res-header" id="reshead${loop.index}">
+                            <a class="res-toggle" data-toggle="collapse" data-target="#collapseRes${loop.index}"
+                                aria-expanded="true" aria-controls="collapseRes">
+                                <div class="res-info">
+                                    <span class="res-name">#${res.nmResidencia}</span>
+                                    <br />
+                                    <span class="res-desc">
+                                    	R$29,00 economizados!
+                                    </span>
+                                </div>
+                            </a>
+                            
+                            
+                            <div class="options">
+                            	<!-- Botao de edicao de residencia -->
+                            	<a class="edit" data-toggle="modal" data-target="#editRes" onClick="toCreateCom(${res.cdResidencia}, ${res.nmResidencia})"><img src="/assets/p_edit.svg"/ alt="editar residencia"></a>
+    	                        
+    	                        <!-- Botao de adicao de comodo -->
+	                            <a class="add" data-toggle="modal" data-target="#addCom" onClick="toCreateCom(${res.cdResidencia})"><img src="/assets/add.svg"/ alt="adicionar cÙmodo"></a>
+                            </div>
+                            
+                            <!-- Botao de delecao da residencia -->
+                            <a class="delete" data-toggle="modal" data-target="#deleteRes">x</a>
+                        </div>
+							
+							
+							<c:forEach items="${listCom}" var="com" varStatus="cLoop">
+							<c:if test="${com.cdResidencia.cdResidencia == res.cdResidencia}">
+                           	  <div id="collapseRes${loop.index}" class="collapse hide" aria-labelledby="reshead${loop.index}"
+                               data-parent="#res${loop.index}">
+                               <div class="accordion com-list" id="res${loop.index}-comlist">
+                                   <div class="com-card">
+                                       <div class="com-header" id="res${loop.index}-comheader${cLoop.index}">
+                                           <a class="com-toggle" data-toggle="collapse"
+                                               data-target="#collapse-res${loop.index}-com${cLoop.index}" aria-expanded="true"
+                                               aria-controls="collapse-res${loop.index}-com${cLoop.index}">
+                                               <div class="com-icon"></div>
+                                               <div class="com-info">
+                                                   <span class="com-name">${com.nmComodo}</span>
+                                                   <br />
+                                                   <span class="com-desc">Gasto mÈdio R$80/mÍs</span>
+                                               </div>
+                                           </a>
+                                           <!-- Botao de delecao do comodo -->
+                            				<a class="delete" data-toggle="modal" data-target="#deleteCom" onClick="toDeleteCom(${com.cdComodo})">x</a>
+                                       </div>
+
+                                       <div id="collapse-res${loop.index}-com${cLoop.index}" class="collapse hide ap-list"
+                                           aria-labelledby="res${loop.index}-com01-apheader" data-parent="#res${loop.index}-com${cLoop.index}-ap">
+                                           <div class="accordion ap-list" id="res${loop.index}-com${cLoop.index}-ap">
+                                               <div class="ap-card">
+                                                   <div class="ap-header" id="res${loop.index}-com${cLoop.index}-apheader">
+                                                       <div class="searchbar">
+                                                           <input type="text"
+                                                               placeholder="Digite o modelo do aparelho..." />
+                                                           <a class="search"><img src="/assets/lupa.svg" /></a>
+                                                       </div>
+                                                       <div class="ap-list">
+                                                       		<c:choose>
+                                                       			<c:when test="${listAp.size() > 0}">
+                                                       				<div class="ap-item">
+		                                                               <div class="ap-display">
+		                                                                   <div class="ap-icon"></div>
+		                                                                   <div class="ap-desc">
+		                                                                       <!-- <span class="ap-name">MonitorÄù</span>
+		                                                                       <br/>
+		                                                                       <span class="ap-desc">Consumo R$0.70/hora. Gasto estimado: R$15,00/m√™s</span> -->
+		                                                                       
+		                                                                   </div>
+		                                                                   <!-- Botao de delecao da residencia -->
+		                           										   <a class="delete" data-toggle="modal" data-target="#deleteAp">x</a>
+		                                                               </div>
+		                                                           </div>
+                                                       			</c:when>
+                                                       			<c:otherwise>
+                                                       				<div class="listaVazia"><span>Comece a adicionar os seus itens!</span></div>
+                                                       			</c:otherwise>
+                                                       		</c:choose>
+                                                       		<c:forEach items="listAp" var="ap">
+                                                           </c:forEach>
+                                                       </div>
+                                                       
+                                                       <div class="footer">
+                                                           <button class="btn cancelar">cancelar</button>
+                                                           <button class="btn salvar">salvar</button>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           </c:if>
+                           </c:forEach>
+                        </div>
+                        
+                    </div>
+                </div>
+            </c:forEach>
+            	<%@include file="../commons/homeModal/modalAddCom.jspf"%>
+                <%@include file="../commons/homeModal/modalAddRes.jspf"%>
+                <%@include file="../commons/homeModal/modalDeleteRes.jspf"%>
+                <%@include file="../commons/homeModal/modalDeleteCom.jspf"%>
+                <%@include file="../commons/homeModal/modalEditRes.jspf"%>                
+            </div>
+        </div>
+        </div>
+        </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../js/modal.js" type="text/javascript"></script>
+</body>
+
+</html>

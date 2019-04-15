@@ -1,0 +1,5 @@
+package com.andromeda.servlet;
+
+public class DeleteComServlet {
+
+}

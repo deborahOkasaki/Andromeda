@@ -1,0 +1,19 @@
+1555260450585	Delete element
+1555265261990	Rename resource 'modalAddRes'
+1555265319972	Delete element
+1555268871967	Rename type 'DeleteRes'
+1555269808432	Rename resource 'navigation.jspf'
+1555270221948	Rename resource 'navigation.css'
+1555270643636	Rename type 'GerenciarComodo'
+1555272108475	Delete element
+1555275863062	Delete element
+1555279635239	Move 4 resources to 'homeModal'
+1555279660179	Delete element
+1555279677374	Delete element
+1555279713295	Rename resource 'modalAddAp.jspf'
+1555287437843	Rename type 'ResidenciaService'
+1555290253444	Move 'modalAddRes.jspf' to 'commons'
+1555290384493	Move 'modalAddRes.jspf' to 'homeModal'
+1555328023147	Copy file
+1555329887520	Copy file
+1555330121684	Copy compilation unit

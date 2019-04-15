@@ -1,0 +1,21 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Andromeda - Minhas Residências</title>
+
+    <link rel="stylesheet" href="/css/andromeda.css">
+    <link rel="stylesheet" href="/css/commons/navigation.css">
+    <link rel="stylesheet" href="/css/commons/modal.css">
+    <link rel="stylesheet" href="/css/abas/residencia.css">
+    <link rel="stylesheet" href="/css/commons/userinfo.css">
+
+    <link rel="icon" href="img/houses.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>

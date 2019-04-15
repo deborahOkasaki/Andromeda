@@ -1,0 +1,20 @@
+<div class="modal fade" id="deleteCom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modalTitle">Deseja realmente excluir este Cômodo?</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/deleteCom" method="post">
+            	<input hidden=true name="delRes" value="-1"/>
+            <div class="modal-footer">
+                <button type="button" class="btn cancelar"
+                    data-dismiss="modal">cancelar</button>
+                <button type="submit" class="btn salvar">confirmar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+package com.andromeda.servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.andromeda.entity.Comodo;
+import com.andromeda.entity.Residencia;
+import com.andromeda.service.ResidenciaService;
+
+@WebServlet(value = "/main")
+public class SessionServlet extends HttpServlet{
+	private ResidenciaService resService = new ResidenciaService();
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		//Get user info
+		req.getSession().getAttribute("user");
+		req.getRequestDispatcher("/abas/main.jsp").forward(req, res);
+		
+		//Get residencia list
+		req.getSession().setAttribute("listRes", resService.retrieveRes());
+		req.getSession().getAttribute("listRes");
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		int codigo = resService.retrieveRes().size() + 1;
+		String name = req.getParameter("resName");
+		int type = Integer.parseInt(req.getParameter("resType"));
+		Residencia newRes = new Residencia();
+	}
+}
